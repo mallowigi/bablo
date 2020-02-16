@@ -1,0 +1,33 @@
+{
+  "name": "isomorphic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:iso-boilerplate": "yarn workspace @iso/boilerplate run start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md,css}": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "cross-env": "^7.0.0",
+    "husky": "^4.2.3",
+    "lerna": "^3.20.2",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "serve": "^11.3.0"
+  }
+}
